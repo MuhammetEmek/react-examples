@@ -26,7 +26,7 @@ const DUMMY_DATA =[
     id:"4",
     title:"T-Shirt",
     amount:65.12,
-    date:new Date(2022,6,16)
+    date:new Date(2022,5,16)
   }
 ]
 
