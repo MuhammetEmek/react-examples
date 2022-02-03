@@ -1,12 +1,12 @@
 import ExpensesItem from "./ExpenseItem";
-import './Expenses.js';
+import './ExpensesList.css';
 
 const ExpensesList=(props)=> {
     if(props.items.length === 0)
         return <h2 className="expenses-list__fallback">No Found Expenses !</h2>
 
     return(
-        <ui>
+        <ui className="expenses-list">
             {
                 props.items.map((expense) => (
                     <ExpensesItem
@@ -15,8 +15,7 @@ const ExpensesList=(props)=> {
                         title  = {expense.title}
                         amount = {expense.amount} />
                 ))
-            }
-            
+            }            
         </ui>        
     )
 }
