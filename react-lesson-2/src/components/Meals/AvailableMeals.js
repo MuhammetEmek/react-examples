@@ -2,6 +2,7 @@
 import MenuItem from "./MenuItem/MenuItem";
 import classes from './AvailableMeals.module.css';
 import Card from "../UI/Card";
+import { useEffect, useState } from "react";
 
 
 const DUMMY_MEALS = [
@@ -33,7 +34,52 @@ const DUMMY_MEALS = [
 
 const AvailableMeals = () => {
 
-    const mealList = DUMMY_MEALS.map((meal) =>(
+    const [meals, setMeals] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+
+        const fetchMeals = async () => {
+
+            const response = await fetch('https://mkk-react-edu-default-rtdb.firebaseio.com/meals.json');
+
+            if(!response.ok){
+                throw new Error("No data avaiable!");
+            }
+
+            const responseData = await response.json();
+
+            console.log(responseData);                       
+
+            const loadedMeals = [];
+        
+            for(const key in responseData) {
+                loadedMeals.push({
+                    id:key,
+                    name :responseData[key].name,
+                    description :responseData[key].description,
+                    price :responseData[key].price,
+                })
+            }
+            
+            setMeals(loadedMeals);
+            setIsLoading(false);
+        }
+
+        fetchMeals().catch((error) => {
+            console.log(error);
+        })
+    },[])
+
+    if(isLoading) {
+        return(
+            <section>
+                <p>Loading....</p>
+            </section>
+        )
+    }
+
+    const mealList = meals.map((meal) =>( 
         <MenuItem
         key={meal.id}
         id={meal.id}

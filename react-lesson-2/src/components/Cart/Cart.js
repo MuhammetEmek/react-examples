@@ -4,14 +4,13 @@ import Modal from "../UI/Modal";
 
 import classes from './Cart.module.css';
 import CartItem from "./CartItem";
+import Checkout from "./Checkout";
 
 
 const Cart = (props) => {
 
     const cartCtx = useContext(CartContext);
-
     const totalAmount = cartCtx.totalAmount.toFixed(2);
-
 
     const cartItemRemoveHandler = (id) => {
         cartCtx.removeItem(id);
@@ -23,7 +22,6 @@ const Cart = (props) => {
 
     const cartItems = (
         <ul>
-
             {
                 cartCtx.items.map((item) => (
                     <CartItem
@@ -46,12 +44,12 @@ const Cart = (props) => {
                 <span>Toplam</span>
                 <span>{totalAmount}</span>
             </div>
+            <Checkout />
             <div className={classes.actions}>
                 <button className={classes['button-alt']}>Kapat</button>
                 <button className={classes.button}>Siparişi Tamamla</button>
             </div>
         </Modal>
-
     )
 }
 
