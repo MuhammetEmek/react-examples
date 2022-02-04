@@ -1,11 +1,27 @@
 import MenuItemForm from "./MenuItemForm";
 
 import classes from './MenuItem.module.css';
+import { useContext } from "react";
+import CartContext from "../../Store/CartContext";
 
 const MenuItem =(props)=> {
 
+
+    const cartCtx = useContext(CartContext);
+
+
     const addToCartHandler = amount=> {
         // liste içerisinde redux!!!!!
+
+        cartCtx.addItem({
+            id:props.id,
+            name: props.name,
+            amount: amount,
+            price: props.price
+        });
+
+        console.log(cartCtx.items)
+
     }
 
     return(
@@ -22,6 +38,7 @@ const MenuItem =(props)=> {
         </li>
 
     )
+
 }
 
 export default MenuItem;
