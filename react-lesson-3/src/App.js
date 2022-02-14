@@ -1,11 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
 import Layout from './components/layout/Layout';
+import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
+import AllQuotes from './pages/AllQuotes';
 
 function App() {
   return (
     <Layout>
-      <div>Ana Content!</div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact>
+            <Redirect to="/quotes" />
+          </Route>
+          <Route path="/quotes" exact>
+            <AllQuotes />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </Layout>
   );
 }
