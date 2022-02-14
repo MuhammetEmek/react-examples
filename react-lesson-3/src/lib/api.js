@@ -10,7 +10,7 @@ export async function getAllQuotes() {
         throw new Error(data.message || 'Servisten veri cekilemedi!');
     }
 
-    const transformedListe = [];
+    const transformedList = [];
 
     for (const key in data) {
         const obj = {
@@ -18,15 +18,14 @@ export async function getAllQuotes() {
             ...data[key],
         };
 
-        transformedListe.push(obj);
+        transformedList.push(obj);
     }
 
-    return transformedListe;
+    return transformedList;
    
 }
 
-export async function getSingleQuote(quoteId) {
-    debugger
+export async function getSingleQuote(quoteId) {    
     const response = await fetch(`${FIREBASE_DOMAIN}/quotes/${quoteId}.json`);
 
     const data = await response.json();
