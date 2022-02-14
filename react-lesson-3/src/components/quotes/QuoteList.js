@@ -1,7 +1,8 @@
 import { Fragment } from "react";
 import { useHistory, useLocation } from 'react-router-dom';
-import QuoteItem from ''./QuoteItem';
-import classes from ''
+
+import classes from './QuoteItem.module.css';
+import QuoteItem from "./QuoteItem";
 
 const QuoteList = (props) => {
 
