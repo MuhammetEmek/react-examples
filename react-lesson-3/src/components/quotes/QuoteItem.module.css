@@ -1,5 +1,5 @@
 .item {
-    margin: 1rem;
+    margin: 1rem 0;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -29,4 +29,9 @@ item blockquote {
 .item p {
     margin: 0;
     margin-bottom: 0.25rem;
+}
+
+.item figcaption {
+    font-style: italic;
+    color: #566d6d;
 }

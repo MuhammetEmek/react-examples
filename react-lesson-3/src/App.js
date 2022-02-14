@@ -2,6 +2,7 @@ import './App.css';
 import Layout from './components/layout/Layout';
 import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 import AllQuotes from './pages/AllQuotes';
+import QuoteDetail from './pages/QuoteDetail';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
           </Route>
           <Route path="/quotes" exact>
             <AllQuotes />
+          </Route>
+          <Route path="/quotes/:quoteId" exact>
+            <QuoteDetail />
           </Route>
         </Switch>
       </BrowserRouter>

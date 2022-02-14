@@ -1,6 +1,6 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import classes from './QuoteItem.module.css';
- 
+
 const QuoteItem = (props) => {
     return (
         <li className={classes.item}>
@@ -8,9 +8,9 @@ const QuoteItem = (props) => {
                 <blockquote>
                     <p>{props.text}</p>
                 </blockquote>
-            <figcaption>{props.author}</figcaption>
+                <figcaption>{props.author}</figcaption>
             </figure>
-            <Link to={`/quotes/${props.id}`}></Link>
+            <Link to={`/quotes/${props.id}`}>Detay için tıklayınız...</Link>
         </li>
     )
 }

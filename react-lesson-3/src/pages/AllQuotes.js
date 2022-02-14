@@ -32,8 +32,8 @@ const AllQuotes = (props) => {
     if(status === 'completed' && (!loadedQuotes || loadedQuotes.length ===0)){
         return <NotQuotesFound />
     }
-
-    return <QuoteList></QuoteList>
+    
+    return <QuoteList quotes={loadedQuotes}></QuoteList>
 }
 
 export default AllQuotes;

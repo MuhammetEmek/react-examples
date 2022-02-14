@@ -3,7 +3,7 @@ import { useReducer, useCallback } from 'react'
 function httpReducer(state, action) {
     if (action.type === 'SEND') {
         return {
-            date: null,
+            data: null,
             error: null,
             status: 'pending',
 
@@ -12,7 +12,7 @@ function httpReducer(state, action) {
 
     if (action.type === 'SUCCESS') {
         return {
-            date: action.responseData,
+            data: action.responseData,
             error: null,
             status: 'completed',
 
@@ -21,9 +21,9 @@ function httpReducer(state, action) {
 
     if (action.type === 'ERROR') {
         return {
-            date: null,
+            data: null,
             error: action.errorMessage,
-            status: 'error',
+            status: 'completed',
 
         }
     }
@@ -43,6 +43,7 @@ function useHttp(requestFunction, startWithPending = false) {
             dispatch({ type: 'SEND' });
             try {
                 const responseData = await requestFunction(requestData);
+                debugger
                 dispatch({ type: 'SUCCESS', responseData });
 
             } catch (error) {
