@@ -1,7 +1,8 @@
+import { NavLink } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
 
 const MainNavigation = () => {
-    return(
+    return (
         <header className={classes.header}>
             <div className={classes.logo}>
 
@@ -9,10 +10,10 @@ const MainNavigation = () => {
             <nav className={classes.nav}>
                 <ul>
                     <li>
-                       Bütün Yazılar
+                        <NavLink to='/quotes' activeClassName={classes.active}>Bütün Yazılar</NavLink>
                     </li>
                     <li>
-                        Yeni Yazı Ekle
+                        <NavLink to='/new-quote' activeClassName={classes.active}>Yeni Yazı Ekle</NavLink>
                     </li>
                 </ul>
             </nav>
