@@ -6,8 +6,7 @@ import QuoteItem from "./QuoteItem";
 
 const QuoteList = (props) => {
 
-    const sortQuotes = (quotes, ascending) => {
-        debugger
+    const sortQuotes = (quotes, ascending) => {        
         return quotes.sort((qA, qB) => {
             if (ascending) {
                 return qA.id > qB.id ? 1 : -1;

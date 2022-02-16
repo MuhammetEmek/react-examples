@@ -10,13 +10,13 @@ import { getAllComments } from "../../lib/api";
 const Comments = () => {
 
     const [isAddedComment, setIsAddedComment] = useState(false);
-    debugger
+    
     // similar with URLSearchParams 
     const params = useParams();
 
     const { quoteId } = params;
 
-    const { sendRequest, status, data: loadedComments } = useHttp(getAllComments);
+    const { sendRequest, status, data:loadedComments } = useHttp(getAllComments);
 
     // First call for component
     useEffect(() => {
@@ -45,7 +45,6 @@ const Comments = () => {
         comments = <CommentList comments={loadedComments} />;
     }
 
-    debugger
     return (
         <section className={classes.comments}>
             <h2>Kullanıcı Yorumları</h2>

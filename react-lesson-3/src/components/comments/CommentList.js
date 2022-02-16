@@ -6,9 +6,9 @@ const CommentList = (props) => {
     return (
        <ul className={classes.comments}>
        {
-           props.comments.map((comment) => {
+           props.comments.map((comment) => (
             <CommentItem key={comment.id} text={comment.text} />
-           })
+           ))
        } 
        </ul>
     )

@@ -9,7 +9,7 @@ import Comments from "../components/comments/Comments";
 const QuoteDetail = () => {
     const match = useRouteMatch();
     const params = useParams();
-    debugger
+    
     const { quoteId } = params;
 
     const { sendRequest, status, data: loadedQuote, error } = useHttp(

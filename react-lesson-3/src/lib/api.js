@@ -61,8 +61,7 @@ export async function addQuote(quoteData) {
     return null;
 }
 
-export async function addComment(requestData) {
-    debugger
+export async function addComment(requestData) {    
     const response = await fetch(`${FIREBASE_DOMAIN}/comments/${requestData.quoteId}.json`, {
         method: 'POST',
         body: JSON.stringify(requestData.commentData),
@@ -80,7 +79,7 @@ export async function addComment(requestData) {
     return { commentId: data.name };
 }
 
-export async function getAllComments(quoteId) {
+export async function getAllComments(quoteId) {    
     const response = await fetch(`${FIREBASE_DOMAIN}/comments/${quoteId}.json`);
 
     const data = await response.json();

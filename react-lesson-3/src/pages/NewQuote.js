@@ -11,7 +11,6 @@ const NewQuote = () => {
     const history = useHistory();
 
     useEffect(() => {
-        debugger
         if(status === 'completed') {
             history.push('/quotes');
         }

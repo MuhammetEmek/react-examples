@@ -15,8 +15,7 @@ const NewComment = (props) => {
         }
     }, [status, error, onAddedComment])
 
-    const submitFormHandler = (event) => {
-        debugger
+    const submitFormHandler = (event) => {    
         event.preventDefault();
         const commentValue = commentInputRef.current.value;
 
