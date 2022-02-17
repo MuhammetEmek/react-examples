@@ -1,24 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import { Fragment } from 'react';
+import Layout from './components/layout/Layout';
+import Products from './components/shop/Products';
+import Notification from './components/UI/Notification';
+import Cart from './components/cart/Cart';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Notification
+        status='error'
+        title='Mesaj'
+        message='Bu bir mesajdır' />
+      <Layout>
+        <Cart />
+        <Products />
+      </Layout>
+    </Fragment>
   );
 }
 
