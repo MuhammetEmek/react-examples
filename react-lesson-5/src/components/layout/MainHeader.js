@@ -1,3 +1,4 @@
+import CartButton from "../cart/CartButton";
 import classes from "./MainHeader.module.css";
 
 const MainHeader = (props) => {
@@ -8,7 +9,7 @@ const MainHeader = (props) => {
             <nav>
                 <ul>
                     <li>
-                        Sepet
+                        <CartButton/>
                     </li>
                 </ul>
             </nav>
